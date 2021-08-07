@@ -1,4 +1,4 @@
-function myFilter(arr, predicate) {
+function myFilter<T>(arr: T[], predicate: (val: T) => boolean) {
   const result = [];
   for (const elm of arr) {
     if (predicate(elm)) {

@@ -1,15 +1,15 @@
-function bind<T, U extends any[], R>(
-  func: (arg1: T, ...rest: U) => R,
-  value: T
-): (...args: U) => R {
-  return (...args: U) => func(value, ...args);
+{
+  type ReturnType<T> = T extends (...args: any[]) => infer R ? R : T;
+  // utirity Tyoes
+
+  type Profile = {
+    name: string;
+    age: number;
+  };
+  // maped type: in keyof
+  type MyPartial<T> = {
+    [P in keyof T]?: T[P];
+  };
+  type PartialProfile = MyPartial<Profile>;
+  type Rec = Exclude;
 }
-
-const add = (x: number, y: number, z: number) => x + y + z;
-
-const add1 = bind(add, 1);
-
-console.log(add1(5, 5));
-
-// Argument of type '"foo"' is not assignable to parameter of type 'number'.
-// add1("foo");

@@ -15,11 +15,11 @@ showUserInfo({
 });
 
 // エラー例
-showUserInfo({
-  name: "Mary Sue",
-  private: false,
-});
-const usr: User = {
-  name: "Gombe Nanashino",
-  age: 100,
-};
+// showUserInfo({
+//   name: "Mary Sue",
+//   private: false,
+// });
+// const usr: User = {
+//   name: "Gombe Nanashino",
+//   age: 100,
+// };
